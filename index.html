@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>올인원장 — Basic 3채널 콘텐츠 초안</title>
+<style>
+  :root { --blog:#2563eb; --insta:#db2777; --kakao:#eab308; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+          background:#f5f6f8; color:#1f2430; margin:0; }
+  header { background:#111827; color:#fff; padding:28px 20px; text-align:center; }
+  header h1 { margin:0 0 6px; font-size:22px; }
+  header p { margin:0; color:#9ca3af; font-size:14px; }
+  nav { display:flex; justify-content:center; gap:8px; padding:16px; background:#fff;
+         border-bottom:1px solid #e5e7eb; position:sticky; top:0; }
+  nav button { border:none; background:#f3f4f6; padding:10px 20px; border-radius:20px;
+                font-size:14px; font-weight:600; cursor:pointer; color:#4b5563; }
+  nav button.active { background:#111827; color:#fff; }
+  .wrap { max-width:880px; margin:0 auto; padding:24px 16px 60px; }
+  .panel { display:none; }
+  .panel.active { display:block; }
+  .panel h2 { font-size:17px; margin:0 0 16px; color:#374151; }
+  .card { background:#fff; border-radius:14px; padding:20px 22px; margin-bottom:16px;
+           box-shadow:0 1px 3px rgba(0,0,0,.06); }
+  .card-head { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
+  .badge { font-size:12px; font-weight:700; padding:3px 9px; border-radius:12px; color:#fff; }
+  .badge.id { background:#374151; }
+  .badge.type { background:#0ea5e9; }
+  .keyword { font-size:13px; color:#6b7280; }
+  .note { font-size:11px; color:#b45309; background:#fef3c7; padding:2px 8px; border-radius:10px; }
+  .meta { font-size:12px; color:#9ca3af; margin-bottom:10px; }
+  .content p { margin:0 0 10px; line-height:1.6; font-size:14px; }
+  .content .title { font-weight:700; font-size:15px; color:#111827; }
+  .content h4 { font-size:14px; margin:14px 0 6px; color:#1f2937; }
+  .content .cta { color:var(--blog); font-weight:600; }
+  .content .caption { font-size:15px; }
+  .tags { margin-top:6px; }
+  .tag { display:inline-block; font-size:12px; color:var(--insta); margin-right:6px; }
+  .annotation { font-size:11px; color:#9ca3af; border-top:1px dashed #e5e7eb; padding-top:8px; margin-top:6px; }
+  #blog .badge.type { background:var(--blog); }
+  #instagram .badge.type { background:var(--insta); }
+  #kakao .badge.type { background:var(--kakao); }
+</style>
+</head>
+<body>
+<header>
+  <h1>올인원장 — Basic 3채널 콘텐츠 초안</h1>
+  <p>keywords_input.csv 25건 → 블로그·인스타그램·카카오채널 자동 생성 결과</p>
+</header>
+<nav>
+  <button class="active" onclick="show('blog', this)">블로그</button>
+  <button onclick="show('instagram', this)">인스타그램</button>
+  <button onclick="show('kakao', this)">카카오채널</button>
+</nav>
+<div class="wrap">
+<section id="blog" class="panel active"><h2>블로그 (24건)</h2>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#001</span>
+        <span class="badge type">신기능</span>
+        <span class="keyword">원비 자동청구, 비대면결제</span>
+        
+      </div>
+      <div class="meta">수학의문 수학학원 · 전문적인</div>
+      <div class="content"><p class="title">[학원 관리 앱] 올인원장 — 원비 자동청구로 수납 스트레스 완전 해결</p><h4>수납 업무, 아직도 수기로 하시나요?</h4><p>수학의문 수학학원처럼 규모 있는 학원도 원비 청구를 수기로 처리하다 보면 매달 수납일마다 시간과 에너지가 크게 소모됩니다. 미납 확인, 학부모 개별 연락, 입금 체크까지 반복 업무가 쌓이고, 정작 수업 준비나 상담에 써야 할 시간이 줄어듭니다.</p><h4>올인원장 원비 자동청구, 이렇게 작동합니다</h4><p>원생별 수강료를 등록해두면 지정일에 자동 청구서가 발송됩니다. 학부모는 카카오 링크로 비대면 결제를 완료하고, 원장님은 수납 현황 대시보드에서 실시간 확인만 하시면 됩니다. 미납 학부모에게는 자동 알림도 발송되어 일일이 연락할 필요가 없습니다.</p><h4>도입 전후, 이렇게 달라집니다</h4><p>실제로 올인원장을 도입한 학원 원장님들은 매달 수납 관리에 쓰던 시간이 평균 5시간 이상 절약됐다고 말합니다. 수기 장부와 개별 문자 발송 대신, 자동청구 한 번 설정으로 매달 반복되던 수납 업무가 시스템으로 대체됩니다. 전문적으로 학원을 운영하는 원장님일수록 이런 자동화의 체감 효과가 큽니다. 청구부터 결제, 미납 관리까지 모든 과정이 한 화면에서 관리되기 때문에, 여러 명의 직원이 나눠 하던 수납 업무를 원장님 혼자서도 충분히 감당할 수 있습니다.</p><p class="cta">지금 바로 30일 무료 체험으로 확인해보세요. → [무료 체험 시작하기]</p></div>
+      <div class="annotation">본문 528자 — 500자 이상 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#002</span>
+        <span class="badge type">이벤트</span>
+        <span class="keyword">여름방학 특강, 선착순 30명</span>
+        
+      </div>
+      <div class="meta">에듀플러스 영어학원 · 긴급한</div>
+      <div class="content"><p class="title">[학원 관리 앱] 올인원장 — 여름방학 특강 선착순 마감 임박 안내</p><h4>여름방학 특강, 자리가 얼마 남지 않았습니다</h4><p>에듀플러스 영어학원은 이번 여름방학 특강을 선착순 30명으로 한정 모집합니다. 매년 여름방학 시즌마다 특강 신청이 몰리면서 정원이 조기 마감되는 경우가 많아, 올해도 등록을 서두르지 않으면 자리를 놓칠 수 있습니다.</p><h4>참여 방법과 혜택, 한눈에 정리했습니다</h4><p>올인원장으로 등록하면 특강 신청부터 결제까지 한 번에 처리됩니다. 7월 10일까지 등록을 완료한 학부모에게는 특별 할인이 적용되며, 등록 즉시 특강 시간표와 준비물 안내가 자동으로 발송됩니다. 학원 입장에서도 전화 문의 응대 없이 신청 현황을 실시간으로 확인할 수 있습니다.</p><h4>마감이 다가올수록 신청이 몰립니다</h4><p>지난 학기 특강도 마감 3일 전부터 신청이 절반 이상 몰렸습니다. 30명 정원이 채워지면 추가 모집 없이 마감되므로, 관심 있는 학부모님은 7월 10일 이전에 서둘러 등록하시길 권장합니다. 매년 여름방학마다 대기 신청까지 이어질 만큼 관심이 높은 특강이었던 만큼, 이번에도 정원이 예정보다 빠르게 마감될 가능성이 큽니다. 할인 적용 여부도 7월 10일을 기점으로 달라지니 미리 서둘러 확인해두시기 바랍니다.</p><p class="cta">지금 바로 등록하고 여름방학 특강 자리를 확보하세요. → [지금 등록하기]</p></div>
+      <div class="annotation">본문 502자 — 500자 이상 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#003</span>
+        <span class="badge type">후기</span>
+        <span class="keyword">출결 자동화, 시간절약</span>
+        
+      </div>
+      <div class="meta">참좋은 보습학원 · 따뜻한</div>
+      <div class="content"><p class="title">[학원 관리 앱] 올인원장 — 10년 원장님이 말하는 출결 자동화 후기</p><h4>행정업무에 지쳐가던 10년차 원장님</h4><p>참좋은 보습학원을 10년째 운영해온 원장님은 매일 출결 체크와 학부모 문자 발송에 저녁 시간 대부분을 쓰고 있었습니다. 학생 수가 늘어날수록 수기 출결 관리는 한계에 부딪혔고, 정작 아이들과 상담할 시간은 줄어들었습니다.</p><h4>올인원장 도입 후 달라진 하루</h4><p>출결 자동화 기능을 도입한 뒤로는 학생이 등원할 때 자동으로 출결이 기록되고, 학부모에게 알림이 즉시 발송됩니다. 원장님은 더 이상 수기로 명단을 대조하거나 문자를 일일이 보낼 필요가 없어졌습니다. 결석이나 지각이 발생해도 시스템이 자동으로 감지해 원장님께 별도로 알려주기 때문에 놓치는 일도 없어졌습니다.</p><h4>행정업무 절반, 이렇게 줄었습니다</h4><p>원장님은 인터뷰에서 &quot;행정업무가 절반으로 줄어든 느낌&quot;이라고 말합니다. 매일 30분 넘게 걸리던 출결 정리가 자동으로 끝나면서, 그 시간을 학생 상담과 수업 준비에 쓸 수 있게 됐습니다. 10년을 운영해온 원장님도 인정한 변화인 만큼, 오래된 학원일수록 자동화의 체감 효과가 크다는 것을 보여주는 사례입니다. 참좋은 보습학원 원장님은 앞으로도 새로운 원생이 늘어나더라도 지금처럼 여유 있게 운영할 수 있을 것 같다며 만족스러운 소감을 전했습니다.</p><p class="cta">참좋은 보습학원처럼 시간을 되찾고 싶다면 지금 체험해보세요. → [무료 체험 시작하기]</p></div>
+      <div class="annotation">본문 545자 — 500자 이상 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#004</span>
+        <span class="badge type">신기능</span>
+        <span class="keyword">AI 피드백, 학생별 분석</span>
+        
+      </div>
+      <div class="meta">더큰생각 논술학원 · 자랑스러운</div>
+      <div class="content"><p class="title">[학원 관리 앱] 올인원장 — AI 피드백으로 학생별 맞춤 분석 시작</p><h4>경쟁 학원엔 없는 AI 피드백 기능</h4><p>더큰생각 논술학원은 올인원장의 AI 피드백 기능을 통해 학생 한 명 한 명의 학습 데이터를 자동으로 분석하고 있습니다. 일반적인 학원 관리 프로그램에는 없는 기능으로, 교육 경쟁력을 한 단계 끌어올렸다는 평가를 받고 있습니다.</p><h4>AI가 만드는 학생별 학습 리포트</h4><p>학생이 제출한 과제와 수업 참여 데이터를 AI가 자동으로 분석해 학생별 강점과 약점을 정리한 피드백을 생성합니다. 원장님과 강사는 이 리포트를 바탕으로 학부모 상담 시 훨씬 구체적인 설명을 할 수 있습니다. 매주 자동 업데이트되는 리포트 덕분에 학생의 변화 추이도 놓치지 않고 확인할 수 있습니다.</p><h4>차별화된 교육, 숫자로도 증명됩니다</h4><p>AI 피드백 기능을 도입한 논술학원 중에는 학부모 만족도 조사에서 상담 만족도가 눈에 띄게 상승한 사례가 보고되고 있습니다. 다른 학원에서는 제공하지 못하는 데이터 기반 피드백이라는 점이 더큰생각 논술학원의 자랑스러운 차별점이 되고 있습니다. 이런 기능은 결국 학부모의 신뢰로 이어집니다. 논술처럼 채점 기준이 모호하게 느껴지는 과목일수록 AI가 근거를 함께 제시해주기 때문에, 학부모 설명 시에도 더 구체적이고 자신 있게 안내할 수 있습니다.</p><p class="cta">AI 피드백으로 우리 학원만의 경쟁력을 만들어보세요. → [무료 체험 시작하기]</p></div>
+      <div class="annotation">본문 542자 — 500자 이상 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#005</span>
+        <span class="badge type">이벤트</span>
+        <span class="keyword">원장 추천 이벤트, 적립금 지급</span>
+        
+      </div>
+      <div class="meta">한울림 음악학원 · 밝은</div>
+      <div class="content"><p class="title">[학원 관리 앱] 올인원장 — 원장 추천하고 적립금 받는 이벤트</p><h4>동료 원장님께 추천하고 혜택도 받으세요</h4><p>한울림 음악학원이 참여 중인 올인원장 추천 이벤트는 기존 회원 원장님이 동료 원장님께 올인원장을 추천하면 양쪽 모두에게 적립금이 지급되는 이벤트입니다. 평소 알고 지내던 원장님들끼리 나누기 좋은 소식입니다.</p><h4>이벤트 참여 방법은 이렇게 간단합니다</h4><p>한울림 음악학원 원장님의 추천 링크를 동료 원장님이 가입 시 입력하기만 하면 됩니다. 별도 서류나 복잡한 절차 없이, 앱 안에서 추천 코드 입력만으로 적립금이 자동 지급됩니다. 추천받은 원장님도 가입과 동시에 첫 달 이용료 할인 혜택을 함께 받을 수 있어 서로에게 이득이 되는 구조입니다.</p><h4>함께할수록 커지는 혜택</h4><p>추천 인원에 제한이 없어 여러 학원 원장님께 소개할수록 적립금이 쌓입니다. 한울림 음악학원처럼 지역 내 다른 학원 원장님들과 네트워크가 있는 경우, 밝은 마음으로 편하게 추천하면서 실질적인 혜택까지 챙길 수 있는 기회입니다. 적립금은 다음 달 이용료에서 바로 차감돼 부담도 줄어듭니다. 원장님 모임이나 지역 커뮤니티에서 자연스럽게 소개하는 것만으로도 혜택이 쌓이기 때문에, 큰 노력 없이 참여할 수 있다는 점도 밝은 반응을 얻고 있는 이유 중 하나입니다.</p><p class="cta">지금 추천 링크를 확인하고 적립금 혜택을 받아보세요. → [추천 이벤트 참여하기]</p></div>
+      <div class="annotation">본문 532자 — 500자 이상 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#006</span>
+        <span class="badge type">후기</span>
+        <span class="keyword">학부모 만족, 출석 알림</span>
+        
+      </div>
+      <div class="meta">꿈이룸 미술학원 · 따뜻한</div>
+      <div class="content"><p class="title">[학원 관리 앱] 올인원장 — 출석 알림에 학부모가 안심하는 이유</p><h4>아이가 학원에 잘 도착했을까 걱정되시죠</h4><p>꿈이룸 미술학원 학부모님들은 아이가 혼자 학원에 다니기 시작하면서 잘 도착했는지, 제 시간에 출석했는지 늘 걱정이 많았습니다. 수업 중에는 전화로 확인하기도 어려워 마음 한켠이 불안했다고 합니다. 특히 등하원 시간이 일정하지 않은 요일에는 그 불안감이 더욱 컸다고 말합니다. 저학년 자녀를 둔 학부모일수록 이런 걱정은 더 크게 다가왔습니다.</p><h4>출석과 동시에 도착하는 알림</h4><p>올인원장 출석 알림 기능을 도입한 뒤로는 아이가 학원에 출석하는 순간 학부모 카카오톡으로 알림이 바로 발송됩니다. 별도로 전화하거나 문의하지 않아도 아이의 등원 상황을 실시간으로 확인할 수 있습니다.</p><h4>학부모의 진짜 목소리</h4><p>실제 학부모님은 &quot;아이가 학원 잘 다니는지 알림 하나로 안심된다&quot;고 후기를 남겼습니다. 꿈이룸 미술학원 원장님도 이 알림 기능 덕분에 학부모 문의 전화가 눈에 띄게 줄었다고 전했습니다. 작은 알림 하나가 학부모와 학원 사이의 신뢰를 따뜻하게 채워주고 있습니다. 특히 맞벌이 가정이 많은 지역 특성상, 수업 중에는 전화를 받기 어려운 학부모님들에게 이 알림이 큰 안도감을 준다는 이야기가 이어지고 있습니다.</p><p class="cta">우리 학원도 학부모가 안심하는 출석 알림을 시작해보세요. → [무료 체험 시작하기]</p></div>
+      <div class="annotation">본문 529자 — 500자 이상 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#007</span>
+        <span class="badge type">신기능</span>
+        <span class="keyword">출결 전광판, 수업 집중</span>
+        
+      </div>
+      <div class="meta">바른자세 태권도장 · 전문적인</div>
+      <div class="content"><p class="title">[학원 관리 앱] 올인원장 — 출결 전광판으로 수업 집중도 높이기</p><h4>수업 중 출석 체크, 방해되지 않나요?</h4><p>바른자세 태권도장처럼 활동량이 많은 수업에서는 수업 중간에 출석을 체크하는 것 자체가 흐름을 끊는 요소였습니다. 사범님이 명단을 보며 이름을 부르는 동안 아이들의 집중도가 떨어지는 경우도 많았습니다. 특히 초등 저학년 수업에서는 잠깐의 공백에도 아이들이 산만해지기 쉬워 고민이 컸습니다. 사범님 입장에서도 수업 흐름이 끊기는 것이 늘 아쉬운 부분이었습니다.</p><h4>입구 전광판으로 끝내는 출결 체크</h4><p>올인원장 출결 전광판을 입구에 설치하면 학생이 출석 카드를 태그하는 즉시 이름과 출석 여부가 전광판에 자동 표시됩니다. 사범님은 수업 중 별도로 출석을 체크할 필요 없이 바로 수업에 집중할 수 있습니다.</p><h4>전문적인 도장 운영의 기본</h4><p>출결 데이터는 자동으로 시스템에 저장되어 학부모 상담 시에도 정확한 출석 이력을 바로 확인할 수 있습니다. 바른자세 태권도장처럼 체계적으로 도장을 운영하려는 곳일수록 출결 전광판 도입 후 수업 집중도와 관리 효율 두 마리 토끼를 모두 잡았다는 평가가 많습니다. 학부모가 도장 앞을 지나며 전광판으로 아이의 출석을 직접 확인할 수 있다는 점도 신뢰를 높이는 부수적인 효과로 꼽힙니다.</p><p class="cta">수업 집중도를 높이는 출결 전광판, 지금 확인해보세요. → [무료 체험 시작하기]</p></div>
+      <div class="annotation">본문 527자 — 500자 이상 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#008</span>
+        <span class="badge type">이벤트</span>
+        <span class="keyword">30일 무료 체험, 신규 가입</span>
+        
+      </div>
+      <div class="meta">코딩나무 코딩학원 · 긴급한</div>
+      <div class="content"><p class="title">[학원 관리 앱] 올인원장 — 신규 원장 대상 30일 전액 무료 체험</p><h4>망설이던 원장님을 위한 기회</h4><p>코딩나무 코딩학원처럼 학원 관리 앱 도입을 고민만 하고 있던 신규 원장님들을 위해, 올인원장이 30일 전액 무료 체험 이벤트를 진행합니다. 결제 부담 없이 실제 기능을 모두 사용해볼 수 있는 기회입니다. 여러 앱을 비교만 하다 결정을 미뤄온 원장님이라면 이번 기회가 특히 반가울 것입니다.</p><h4>지금 가입하면 바로 시작됩니다</h4><p>신규 가입 원장님에 한해 카드 등록 없이 30일간 모든 기능을 무료로 이용할 수 있습니다. 원비 자동청구, 출결 관리, 학부모 알림까지 유료 버전과 동일하게 체험해볼 수 있어 실질적인 도입 판단이 가능합니다. 체험 기간 중에도 전담 담당자가 초기 설정을 도와드려 어려움 없이 바로 사용해보실 수 있습니다.</p><h4>이벤트는 기간 한정입니다</h4><p>이번 30일 무료 체험은 신규 가입자 대상 한정 이벤트로, 종료 시점이 정해져 있어 늦어질수록 놓칠 가능성이 커집니다. 코딩나무 코딩학원처럼 신학기 전 관리 시스템을 정비하려는 원장님이라면 지금이 가장 부담 없이 시작할 수 있는 타이밍입니다. 체험 종료 후에도 만족스럽지 않다면 별도 위약금 없이 해지할 수 있어 부담 없이 결정하실 수 있습니다.</p><p class="cta">지금 가입하고 30일 무료 체험을 바로 시작하세요. → [무료 체험 시작하기]</p></div>
+      <div class="annotation">본문 526자 — 500자 이상 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#009</span>
+        <span class="badge type">후기</span>
+        <span class="keyword">매출 증가, 원생 증가</span>
+        
+      </div>
+      <div class="meta">탑클래스 수학학원 · 자랑스러운</div>
+      <div class="content"><p class="title">[학원 관리 앱] 올인원장 — 도입 3개월 만에 매출 20% 상승한 비결</p><h4>숫자로 증명된 변화</h4><p>탑클래스 수학학원은 올인원장을 도입한 지 3개월 만에 매출이 20% 상승했습니다. 단순한 만족도 후기가 아니라 실제 매출 데이터로 확인된 변화라는 점에서 다른 원장님들의 관심을 받고 있습니다. 원장님은 처음엔 큰 기대 없이 도입했지만 결과가 예상을 뛰어넘었다고 밝혔습니다.</p><h4>매출 상승의 배경</h4><p>원비 자동청구로 미납률이 낮아지고, 상담 이력 관리로 신규 상담의 등록 전환율이 높아진 것이 매출 상승의 핵심 배경으로 꼽힙니다. 행정업무에 쓰던 시간을 상담과 수업 품질 개선에 재투자한 결과이기도 합니다. 특히 재등록 시점에 맞춘 자동 알림이 이탈을 줄이는 데도 큰 역할을 했다고 분석됩니다.</p><h4>원생 수도 함께 늘었습니다</h4><p>매출뿐 아니라 원생 수도 함께 증가했습니다. 학부모 만족도가 높아지면서 재등록률이 올라갔고, 입소문을 통한 신규 문의도 늘었습니다. 탑클래스 수학학원의 사례는 관리 시스템 도입이 단순 편의를 넘어 실제 매출 성과로 이어질 수 있음을 자랑스럽게 보여주는 결과입니다. 원장님은 이 데이터를 인근 지역 원장님 모임에서도 자신 있게 공유하고 있다고 전했습니다.</p><p class="cta">탑클래스 수학학원의 성과, 우리 학원에서도 확인해보세요. → [무료 체험 시작하기]</p></div>
+      <div class="annotation">본문 515자 — 500자 이상 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#010</span>
+        <span class="badge type">신기능</span>
+        <span class="keyword">상담 이력 관리, 학부모 상담</span>
+        
+      </div>
+      <div class="meta">마음쑥쑥 심리상담센터 · 전문적인</div>
+      <div class="content"><p class="title">[학원 관리 앱] 올인원장 — 상담 이력 관리로 놓치는 상담 없이</p><h4>지난 상담 내용, 기억나시나요?</h4><p>마음쑥쑥 심리상담센터처럼 상담 건수가 많은 곳에서는 원장님이 지난 상담 내용을 일일이 기억하기 어려운 경우가 많았습니다. 다음 상담 때 이전 맥락을 다시 확인하느라 시간이 걸리고, 학부모 입장에서도 신뢰가 떨어질 수 있습니다. 수기로 남긴 메모는 나중에 찾기도 어려워 답답함이 컸습니다.</p><h4>상담 이력, 자동으로 저장됩니다</h4><p>올인원장 상담 이력 관리 기능을 사용하면 상담 내용을 입력하는 즉시 학생별로 자동 저장됩니다. 다음 상담 전 이전 기록을 빠르게 확인할 수 있어 맥락을 잃지 않고 상담을 이어갈 수 있습니다. 키워드로 검색도 가능해 필요한 상담 기록을 찾는 데 오래 걸리지 않습니다.</p><h4>전문적인 상담 운영의 기본기</h4><p>상담 이력이 체계적으로 쌓이면 학생의 변화 흐름을 데이터로 파악할 수 있어 상담의 전문성도 함께 높아집니다. 마음쑥쑥 심리상담센터처럼 신뢰가 핵심인 기관일수록 이런 기록 관리 시스템이 상담 품질에 직접적인 영향을 줍니다. 여러 명의 상담사가 함께 일하는 경우에도 이력이 공유되기 때문에, 담당자가 바뀌더라도 학생에 대한 이해가 끊기지 않는다는 장점도 있습니다.</p><p class="cta">놓치는 상담 없이, 상담 이력 관리를 지금 시작하세요. → [무료 체험 시작하기]</p></div>
+      <div class="annotation">본문 511자 — 500자 이상 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#011</span>
+        <span class="badge type">이벤트</span>
+        <span class="keyword">신학기 이벤트, 첫 달 무료</span>
+        
+      </div>
+      <div class="meta">슬기로운 국어학원 · 밝은</div>
+      <div class="content"><p class="title">[학원 관리 앱] 올인원장 — 신학기 맞이 첫 달 원비 무료 이벤트</p><h4>새 학기, 새 마음으로 시작하세요</h4><p>슬기로운 국어학원은 3월 신학기를 맞아 신규 등록 학생에게 첫 달 원비를 무료로 제공하는 이벤트를 진행합니다. 새 학기를 앞두고 학원을 고민하던 학부모님들께 반가운 소식입니다. 학년이 바뀌는 시기라 새로운 학습 습관을 만들기에도 좋은 타이밍입니다.</p><h4>이벤트 안내, 이렇게 전달하세요</h4><p>올인원장으로 학부모 안내 메시지를 발송하면 신학기 이벤트 소식이 자동으로 전달됩니다. 밝고 친근한 톤으로 작성된 메시지 템플릿을 활용하면 학부모님이 부담 없이 이벤트 내용을 확인할 수 있습니다. 등록 문의가 들어오면 상담 이력에도 자동으로 남아 이후 관리도 한결 수월해집니다.</p><h4>신학기 등록, 지금이 적기입니다</h4><p>3월 신학기 전후로 등록 문의가 몰리는 만큼, 첫 달 무료 혜택은 신규 학부모의 등록 결정을 앞당기는 데 효과적입니다. 슬기로운 국어학원처럼 밝은 분위기로 신학기를 시작하고 싶은 학원이라면 이 이벤트를 적극 활용해볼 만합니다. 신규 학부모 입장에서도 첫 달을 부담 없이 체험해보고 등록을 결정할 수 있어 만족도가 높다는 반응이 이어지고 있습니다. 이벤트 소식을 들은 주변 학부모님들 사이에서도 입소문이 빠르게 퍼지고 있습니다.</p><p class="cta">신학기 첫 달 무료 혜택, 지금 바로 안내해보세요. → [이벤트 자세히 보기]</p></div>
+      <div class="annotation">본문 532자 — 500자 이상 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#012</span>
+        <span class="badge type">후기</span>
+        <span class="keyword">강사 만족, 수업 준비</span>
+        <span class="note">(detail 결측 → type·keyword·brand_name 기반으로 생성)</span>
+      </div>
+      <div class="meta">영어마을 어학원 · 친근한</div>
+      <div class="content"><p class="title">[학원 관리 앱] 올인원장 — 강사님이 말하는 수업 준비 편의성</p><h4>수업 준비, 강사님에게도 부담이었어요</h4><p>영어마을 어학원 강사님들은 수업 자료 정리와 학생별 진도 확인에 매번 적지 않은 시간을 쓰고 있었습니다. 수업 준비 외에 행정적인 부분까지 챙기다 보니 정작 수업 자체에 집중하기 어려운 날도 있었다고 합니다. 특히 반이 여러 개로 나뉘어 있는 경우 진도를 따로 정리하는 것만으로도 시간이 꽤 걸렸습니다. 퇴근 후에도 다음 날 수업 자료를 정리하느라 개인 시간이 부족했습니다.</p><h4>올인원장으로 가벼워진 수업 준비</h4><p>학생별 진도와 이전 수업 기록이 앱 안에 정리되어 있어 강사님은 수업 전 확인 한 번으로 준비를 끝낼 수 있습니다. 자료를 따로 찾거나 수기로 정리할 필요가 없어졌습니다.</p><h4>강사님들의 솔직한 반응</h4><p>영어마을 어학원 강사님들은 &quot;수업 준비 시간이 줄어 오히려 수업 내용에 더 집중하게 됐다&quot;고 말합니다. 강사 만족도가 올라가면서 학원 분위기도 한결 편안해졌다는 후기가 이어지고 있습니다. 신입 강사가 들어와도 이전 수업 기록을 바로 확인할 수 있어 인수인계 부담이 줄었다는 점도 함께 언급됐습니다. 강사들 사이에서도 이제는 없어서는 안 될 도구라는 이야기가 나올 정도입니다.</p><p class="cta">강사님도 편해지는 수업 준비, 지금 경험해보세요. → [무료 체험 시작하기]</p></div>
+      <div class="annotation">본문 515자 — 500자 이상 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#013</span>
+        <span class="badge type">신기능</span>
+        <span class="keyword">학부모 알림, 공지 자동발송</span>
+        
+      </div>
+      <div class="meta">해맑은 피아노학원 · 밝은</div>
+      <div class="content"><p class="title">[학원 관리 앱] 올인원장 — 공지 한 번으로 전체 학부모에게 자동발송</p><h4>공지 하나 보내는 것도 일이었죠</h4><p>해맑은 피아노학원처럼 원생이 많은 학원에서는 발표회나 휴원 공지를 학부모 한 명 한 명에게 따로 보내는 것이 큰 일이었습니다. 단체 문자 발송도 번거롭고, 빠뜨리는 경우도 종종 있었습니다. 문자 요금 부담도 있었고, 수신 거부로 아예 안내를 받지 못하는 학부모님도 있었습니다. 급하게 휴원을 알려야 하는 날에는 특히 더 정신없이 바빴습니다.</p><h4>한 번 쓰면 전체 발송, 이렇게 쉬워졌어요</h4><p>올인원장에 공지를 한 번 작성하면 등록된 전체 학부모에게 카카오톡으로 자동 발송됩니다. 반별로 나눠 보내는 것도 가능해 필요한 대상에게만 정확히 전달할 수 있습니다. 예약 발송 기능도 있어 등원 전 미리 공지를 준비해둘 수 있습니다.</p><h4>밝아진 소통, 늘어난 여유 시간</h4><p>공지 발송에 걸리던 시간이 크게 줄면서 해맑은 피아노학원 원장님은 그 시간을 학생 지도에 쓸 수 있게 됐습니다. 학부모 입장에서도 공지를 놓치지 않게 되어 소통이 한결 밝고 원활해졌습니다. 발표회처럼 중요한 공지일수록 도착 확인 여부까지 파악할 수 있어 안내 누락 걱정도 크게 줄었습니다. 원장님은 이제 발표회 시즌에도 여유롭게 준비할 수 있게 됐다고 말합니다.</p><p class="cta">공지 자동발송, 지금 바로 경험해보세요. → [무료 체험 시작하기]</p></div>
+      <div class="annotation">본문 524자 — 500자 이상 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#014</span>
+        <span class="badge type">이벤트</span>
+        <span class="keyword">여름 캠프, 조기등록 할인</span>
+        
+      </div>
+      <div class="meta">사이언스랩 과학학원 · 긴급한</div>
+      <div class="content"><p class="title">[학원 관리 앱] 올인원장 — 여름 캠프 조기등록 15% 할인 마감 임박</p><h4>여름 캠프, 정원이 빠르게 채워지고 있습니다</h4><p>사이언스랩 과학학원은 8월 여름 캠프를 운영하며 조기 등록 시 15% 할인을 제공하고 있습니다. 매년 인기 프로그램인 만큼 정원이 예상보다 빠르게 마감되고 있어 등록을 서두를 필요가 있습니다. 실험 위주의 커리큘럼이라 학부모님들 사이에서 입소문이 특히 빠른 편입니다.</p><h4>조기등록 할인, 이렇게 받으세요</h4><p>올인원장을 통해 캠프 신청과 결제를 한 번에 진행하면 15% 할인이 자동 적용됩니다. 등록 즉시 캠프 일정과 준비물 안내도 함께 발송되어 별도로 문의할 필요가 없습니다. 형제자매가 함께 등록하는 경우 추가 할인도 자동으로 계산되어 안내됩니다.</p><h4>마감 임박, 서두르셔야 합니다</h4><p>현재 정원의 상당수가 이미 채워진 상태로, 조기등록 할인 기간이 끝나기 전에 신청하지 않으면 정가로 등록하거나 대기해야 할 수 있습니다. 사이언스랩 과학학원처럼 매년 마감이 빨랐던 캠프인 만큼 지금 바로 결정하시길 권장합니다. 대기 등록만 하더라도 자리가 나는 즉시 우선 안내를 받을 수 있으니 망설이지 말고 신청부터 해두시는 것이 좋습니다. 작년에도 대기 등록 후 마감 직전에 자리가 난 사례가 여러 건 있었습니다.</p><p class="cta">정원 마감 전에 여름 캠프 조기등록을 서두르세요. → [지금 등록하기]</p></div>
+      <div class="annotation">본문 519자 — 500자 이상 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#015</span>
+        <span class="badge type">후기</span>
+        <span class="keyword">행정 자동화, 워라밸</span>
+        
+      </div>
+      <div class="meta">또박또박 글쓰기교실 · 따뜻한</div>
+      <div class="content"><p class="title">[학원 관리 앱] 올인원장 — 1인 원장님이 되찾은 저녁 시간</p><h4>혼자 다 해내야 했던 1인 원장님</h4><p>또박또박 글쓰기교실을 혼자 운영하는 원장님은 수업은 물론 행정업무까지 모두 도맡아 하다 보니 저녁이면 늘 지쳐 있었습니다. 수강료 정리, 학부모 연락, 출결 체크까지 혼자 감당하기엔 벅찬 날들이 많았습니다. 직원을 새로 고용하기엔 부담스러운 규모라 늘 혼자 견뎌야 했습니다.</p><h4>행정 자동화가 만든 작은 변화</h4><p>올인원장을 도입한 뒤로는 수강료 청구와 출결 관리가 자동으로 처리되면서 원장님이 직접 챙겨야 할 일이 크게 줄었습니다. 반복되던 행정업무가 시스템으로 대체되니 하루의 흐름이 한결 여유로워졌습니다. 수업이 끝난 뒤에도 남아서 처리하던 일들이 사라지면서 퇴근 시간도 눈에 띄게 빨라졌습니다.</p><h4>되찾은 저녁, 되찾은 워라밸</h4><p>원장님은 &quot;저녁 시간을 되찾았다&quot;고 후기를 남겼습니다. 혼자 운영하는 학원일수록 이런 자동화의 체감 효과가 크다는 것을 보여주는 따뜻한 사례입니다. 이제는 저녁 시간에 다음 수업을 여유롭게 준비할 수 있게 됐습니다. 원장님은 앞으로도 혼자서 무리하지 않고 오래 학원을 운영할 수 있을 것 같다는 소감을 함께 전했습니다. 가족과 저녁 식사를 함께하는 날도 눈에 띄게 늘었다고 합니다.</p><p class="cta">1인 원장님의 워라밸, 올인원장으로 되찾아보세요. → [무료 체험 시작하기]</p></div>
+      <div class="annotation">본문 528자 — 500자 이상 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#016</span>
+        <span class="badge type">신기능</span>
+        <span class="keyword">매출 분석 리포트, 전환율</span>
+        
+      </div>
+      <div class="meta">넘버원 수학전문학원 · 전문적인</div>
+      <div class="content"><p class="title">[학원 관리 앱] 올인원장 — 매출과 상담 전환율을 한눈에 보는 리포트</p><h4>감으로 운영하던 학원 매출 관리</h4><p>넘버원 수학전문학원은 그동안 매출과 상담 전환율을 정확한 데이터 없이 감으로 파악해왔습니다. 어떤 달에 왜 매출이 늘고 줄었는지 구체적으로 분석하기 어려운 구조였습니다. 엑셀로 정리해봐도 매달 반복되는 작업이라 금방 흐지부지되기 일쑤였습니다.</p><h4>자동으로 그려지는 매출 분석 그래프</h4><p>올인원장 매출 분석 리포트 기능은 수납 현황과 상담 전환율을 자동으로 그래프화합니다. 원장님은 별도 엑셀 작업 없이 월별 매출 추이와 상담 대비 등록 전환율을 한눈에 확인할 수 있습니다. 원하는 기간을 지정하면 지난달, 지난 분기와도 손쉽게 비교해볼 수 있습니다.</p><h4>전문적인 의사결정의 기반</h4><p>데이터 기반으로 운영 현황을 파악하면 마케팅이나 상담 전략을 수립할 때도 훨씬 전문적인 판단이 가능해집니다. 넘버원 수학전문학원처럼 규모 있는 학원일수록 이런 리포트 기능이 운영 효율에 미치는 영향이 큽니다. 매달 리포트를 비교하며 어떤 상담 방식이 전환율을 높였는지 되짚어볼 수 있어, 감이 아닌 근거를 바탕으로 학원을 운영할 수 있게 됩니다. 직원들과 회의할 때도 근거 자료로 바로 활용할 수 있어 설득력이 높아졌습니다.</p><p class="cta">매출과 전환율, 데이터로 정확히 파악해보세요. → [무료 체험 시작하기]</p></div>
+      <div class="annotation">본문 521자 — 500자 이상 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#017</span>
+        <span class="badge type">이벤트</span>
+        <span class="keyword">가을 특강, 한정 모집</span>
+        
+      </div>
+      <div class="meta">리딩킹 독서논술 · 긴급한</div>
+      <div class="content"><p class="title">[학원 관리 앱] 올인원장 — 가을 독서 특강 20명 한정 모집 마감 임박</p><h4>가을 특강, 20명 한정으로 진행됩니다</h4><p>리딩킹 독서논술은 9월 가을 독서 특강을 20명 한정으로 모집합니다. 소수 정예로 진행되는 프로그램 특성상 정원이 채워지면 추가 모집 없이 바로 마감됩니다. 소수 정예인 만큼 학생 한 명 한 명에게 더 깊이 있는 피드백이 가능하다는 점이 특강의 강점입니다.</p><h4>등록 절차는 간단하게</h4><p>올인원장을 통해 특강 신청과 결제를 한 번에 진행할 수 있으며, 등록 즉시 특강 일정과 커리큘럼 안내가 자동으로 발송됩니다. 학부모님은 복잡한 절차 없이 빠르게 등록을 완료할 수 있습니다. 결제 확인 문자도 즉시 발송되어 등록이 제대로 됐는지 따로 확인할 필요가 없습니다.</p><h4>마감 전 서둘러야 하는 이유</h4><p>20명이라는 한정된 정원 특성상 신청이 몰리면 예상보다 훨씬 빨리 마감될 수 있습니다. 리딩킹 독서논술처럼 소수 정예로 운영되는 특강일수록 관심 있는 학부모님은 지금 바로 등록을 서두르시는 것이 좋습니다. 지난 특강에서도 정원의 절반이 접수 첫날에 마감된 만큼, 이번에도 빠른 결정이 필요합니다. 신청을 미루다 마감 문자를 받고 아쉬워한 학부모님도 여럿 있었습니다.</p><p class="cta">가을 특강 20명 정원, 지금 바로 신청하세요. → [지금 등록하기]</p></div>
+      <div class="annotation">본문 501자 — 500자 이상 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#018</span>
+        <span class="badge type">후기</span>
+        <span class="keyword">출결 알림, 학부모 신뢰</span>
+        
+      </div>
+      <div class="meta">푸른솔 보습학원 · 따뜻한</div>
+      <div class="content"><p class="title">[학원 관리 앱] 올인원장 — 출결 알림으로 사라진 학부모 클레임</p><h4>클레임에 시달리던 원장님의 고민</h4><p>푸른솔 보습학원 원장님은 예전에는 아이의 등하원 시간을 두고 학부모님의 문의와 클레임이 종종 있었다고 합니다. 정확한 출결 시간을 즉시 안내하기 어려운 구조가 원인이었습니다. 수업 중에 걸려오는 확인 전화를 받느라 수업 흐름이 끊기는 일도 잦았습니다.</p><h4>출결 알림이 만든 신뢰</h4><p>올인원장 출결 알림을 도입한 뒤로는 아이가 등하원할 때마다 학부모에게 실시간으로 알림이 전송됩니다. 학부모님은 더 이상 전화로 확인할 필요 없이 알림만으로 안심할 수 있게 됐습니다. 알림에는 정확한 시각까지 표시되어 등하원 시간을 두고 오해가 생길 일도 없어졌습니다. 맞벌이 부모님들 사이에서 특히 만족도가 높은 기능으로 꼽힙니다.</p><h4>사라진 클레임, 따뜻해진 신뢰</h4><p>원장님은 &quot;출결 알림 덕분에 학부모 클레임이 사라졌다&quot;고 후기를 남겼습니다. 작은 알림 하나가 학부모와 학원 사이의 신뢰를 따뜻하게 회복시킨 사례로, 다른 원장님들에게도 공감을 얻고 있습니다. 원장님은 클레임 응대에 쓰던 시간을 이제는 수업 준비에 온전히 쏟을 수 있게 됐다며 만족스러워했습니다. 학부모님들도 예전보다 학원에 대한 신뢰가 훨씬 두터워졌다고 입을 모읍니다.</p><p class="cta">출결 알림으로 학부모 신뢰를 쌓아보세요. → [무료 체험 시작하기]</p></div>
+      <div class="annotation">본문 534자 — 500자 이상 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#019</span>
+        <span class="badge type">신기능</span>
+        <span class="keyword">보강 관리, 스케줄 자동조정</span>
+        
+      </div>
+      <div class="meta">스텝업 영어학원 · 전문적인</div>
+      <div class="content"><p class="title">[학원 관리 앱] 올인원장 — 결석 학생 보강, 스케줄 자동조정으로 해결</p><h4>보강 일정 조율, 매번 골치였죠</h4><p>스텝업 영어학원은 결석한 학생의 보강 일정을 조율하는 데 매번 시간이 많이 걸렸습니다. 강사 스케줄과 학생 가능 시간을 일일이 대조하다 보면 상담이나 수업 준비 시간이 줄어들었습니다. 여러 명이 동시에 결석한 날에는 조율이 더욱 복잡해져 하루 종일 시간표만 들여다본 적도 있었습니다. 종이 시간표에 손으로 표시하다 보니 실수로 겹치는 일정이 생기기도 했습니다.</p><h4>자동으로 추천되는 보강 일정</h4><p>올인원장 보강 관리 기능은 결석 학생이 발생하면 강사와 학생의 빈 시간을 자동으로 분석해 가능한 보강 일정을 추천합니다. 원장님은 추천된 일정 중 확정만 하면 되어 조율 시간이 크게 줄어듭니다.</p><h4>전문적인 스케줄 관리의 시작</h4><p>보강 일정이 시스템으로 자동 관리되면 누락이나 중복 배정 같은 실수도 줄어듭니다. 스텝업 영어학원처럼 수업 시간표가 촘촘한 학원일수록 이런 자동조정 기능이 운영 효율에 큰 도움이 됩니다. 학부모에게도 확정된 보강 일정이 자동으로 안내되기 때문에, 별도로 전화를 걸어 일정을 안내할 필요가 없어졌습니다. 강사들도 자신의 스케줄을 실시간으로 확인할 수 있어 혼선이 크게 줄었습니다.</p><p class="cta">보강 일정 조율, 이제 자동으로 해결하세요. → [무료 체험 시작하기]</p></div>
+      <div class="annotation">본문 522자 — 500자 이상 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#020</span>
+        <span class="badge type">이벤트</span>
+        <span class="keyword">리뷰 작성 이벤트, 기프티콘</span>
+        <span class="note">(detail 결측 → type·keyword·brand_name 기반으로 생성)</span>
+      </div>
+      <div class="meta">똑똑한 토론학원 · 밝은</div>
+      <div class="content"><p class="title">[학원 관리 앱] 올인원장 — 리뷰 작성하고 기프티콘 받는 이벤트</p><h4>리뷰 남기고 기프티콘 받아가세요</h4><p>똑똑한 토론학원 학부모님을 대상으로 올인원장 이용 후기 리뷰를 작성하면 기프티콘을 지급하는 이벤트가 진행 중입니다. 평소 편하게 사용해오신 경험을 짧은 후기로 남기기만 하면 됩니다. 짧은 한두 줄 후기도 참여로 인정되니 부담 없이 작성하셔도 됩니다.</p><h4>참여 방법은 아주 간단합니다</h4><p>올인원장 앱 내 리뷰 작성 메뉴에서 이용 경험을 남기고 인증하면 확인 후 기프티콘이 자동 지급됩니다. 별도 서류나 복잡한 절차 없이 몇 분이면 참여가 끝납니다. 리뷰 작성 후에는 문자로 기프티콘 지급 안내가 바로 도착해 기다림 없이 확인할 수 있습니다.</p><h4>모두가 즐거운 이벤트</h4><p>똑똑한 토론학원처럼 여러 학부모님이 함께 이용하는 학원일수록 밝은 마음으로 리뷰를 남기며 소소한 혜택까지 챙길 수 있는 기회입니다. 이벤트 기간 중 참여하면 기프티콘 지급까지 빠르게 진행됩니다. 리뷰는 다른 학부모님이 학원을 선택할 때도 참고가 되므로, 솔직한 이용 경험을 나누는 것만으로도 서로에게 도움이 되는 이벤트입니다. 원장님 입장에서도 학부모님의 생생한 의견을 들을 수 있어 운영에 참고가 됩니다.</p><p class="cta">지금 리뷰를 남기고 기프티콘 혜택을 받아보세요. → [리뷰 작성하러 가기]</p></div>
+      <div class="annotation">본문 509자 — 500자 이상 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#021</span>
+        <span class="badge type">후기</span>
+        <span class="keyword">수납 자동화, 미납 감소</span>
+        
+      </div>
+      <div class="meta">그랜드 수학학원 · 자랑스러운</div>
+      <div class="content"><p class="title">[학원 관리 앱] 올인원장 — 미납률 절반으로 줄인 수납 자동화 사례</p><h4>미납 관리, 늘 골칫거리였습니다</h4><p>그랜드 수학학원은 매달 미납 학부모를 확인하고 개별 연락하는 일에 상당한 시간을 쓰고 있었습니다. 미납이 반복되면서 원비 관리 자체가 학원 운영의 스트레스 요인이 되기도 했습니다. 같은 학부모에게 매달 반복해서 연락하는 것도 서로 부담스러운 일이었습니다.</p><h4>자동 청구가 만든 변화</h4><p>올인원장 원비 자동청구를 도입한 뒤로는 지정일에 자동으로 청구서가 발송되고, 미납 시 자동 알림까지 이어져 학부모가 결제를 놓치는 경우가 크게 줄었습니다. 결제 수단도 다양하게 지원되어 학부모님이 편한 방식으로 바로 납부할 수 있게 됐습니다.</p><h4>숫자로 확인된 성과</h4><p>그랜드 수학학원은 도입 후 원비 미납률이 절반으로 줄었다는 결과를 확인했습니다. 자동화된 수납 시스템이 실제 미납 감소로 이어진 자랑스러운 사례로, 비슷한 고민을 가진 원장님들에게 참고가 되고 있습니다. 원장님은 미납 확인에 쓰던 시간을 신규 상담에 투자하면서 원생 모집에도 긍정적인 영향을 받았다고 덧붙였습니다. 학부모님들 반응도 좋아 결제 절차가 훨씬 편해졌다는 이야기를 자주 듣는다고 합니다.</p><p class="cta">그랜드 수학학원처럼 미납 걱정을 줄여보세요. → [무료 체험 시작하기]</p></div>
+      <div class="annotation">본문 501자 — 500자 이상 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#022</span>
+        <span class="badge type">신기능</span>
+        <span class="keyword">학습 패턴 분석, 맞춤 피드백</span>
+        
+      </div>
+      <div class="meta">브레인업 영재교육 · 자랑스러운</div>
+      <div class="content"><p class="title">[학원 관리 앱] 올인원장 — 학습 패턴 분석으로 만드는 맞춤 피드백</p><h4>아이마다 다른 학습 패턴, 파악이 어려웠죠</h4><p>브레인업 영재교육은 학생마다 다른 학습 속도와 참여 패턴을 정확히 파악하기 위해 그동안 많은 시간을 들여왔습니다. 수업 관찰만으로는 데이터 기반의 정밀한 분석에 한계가 있었습니다. 영재교육 특성상 아이마다 편차가 커서 일반적인 기준으로는 설명하기 어려운 경우도 많았습니다.</p><h4>출결과 참여도로 완성되는 학습 분석</h4><p>올인원장 학습 패턴 분석 기능은 출결과 수업 참여도 데이터를 자동으로 분석해 학생별 학습 패턴을 파악합니다. 이를 바탕으로 학생에게 맞춘 피드백을 생성해 상담 자료로 활용할 수 있습니다. 시간이 지날수록 데이터가 쌓여 분석의 정확도도 함께 높아집니다.</p><h4>영재교육 기관다운 차별점</h4><p>브레인업 영재교육은 이 기능을 통해 다른 학원에서는 제공하기 어려운 정밀한 맞춤 피드백을 학부모에게 제공하고 있습니다. 데이터 기반 분석은 영재교육 기관으로서의 전문성을 자랑스럽게 뒷받침하는 요소가 되고 있습니다. 학부모 상담 시에도 막연한 느낌이 아니라 구체적인 데이터를 근거로 설명할 수 있어 상담 만족도 또한 함께 높아지고 있습니다. 이런 차별점 덕분에 인근 지역에서도 입소문을 타고 문의가 꾸준히 이어지고 있습니다.</p><p class="cta">학습 패턴 분석으로 우리 학원만의 강점을 만들어보세요. → [무료 체험 시작하기]</p></div>
+      <div class="annotation">본문 530자 — 500자 이상 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#023</span>
+        <span class="badge type">이벤트</span>
+        <span class="keyword">체험 수업, 무료 진단</span>
+        
+      </div>
+      <div class="meta">말문트임 스피치학원 · 밝은</div>
+      <div class="content"><p class="title">[학원 관리 앱] 올인원장 — 무료 체험 수업과 학습 진단 이벤트</p><h4>등록 전 먼저 경험해보세요</h4><p>말문트임 스피치학원은 신규 원생을 위해 무료 체험 수업과 학습 진단을 함께 제공하는 이벤트를 진행합니다. 등록을 망설이던 학부모님도 부담 없이 먼저 경험해볼 수 있습니다. 아이의 발음이나 발표 습관이 걱정됐던 학부모님들에게 특히 좋은 기회입니다.</p><h4>체험과 진단, 한 번에 신청하세요</h4><p>올인원장으로 체험 수업을 신청하면 진단 일정과 결과 안내까지 자동으로 발송됩니다. 학부모님은 신청부터 결과 확인까지 별도 문의 없이 진행 상황을 바로 파악할 수 있습니다. 진단 결과는 그래프 형태로도 제공되어 아이의 현재 수준을 한눈에 이해하기 쉽습니다.</p><h4>밝은 시작을 위한 첫걸음</h4><p>무료 진단을 통해 아이의 현재 말하기 수준을 파악하고 나면, 어떤 프로그램이 필요한지 훨씬 명확해집니다. 말문트임 스피치학원처럼 신규 원생 유치를 고민하는 학원이라면 이런 체험형 이벤트가 밝은 첫인상을 남기는 데 효과적입니다. 진단 결과를 바탕으로 맞춤 상담까지 이어지기 때문에, 체험 이후 등록으로 연결되는 비율도 높은 편입니다. 부담 없이 시작한 체험이 좋은 첫인상으로 이어졌다는 학부모 후기도 늘고 있습니다.</p><p class="cta">무료 체험 수업과 진단, 지금 바로 신청하세요. → [체험 신청하기]</p></div>
+      <div class="annotation">본문 512자 — 500자 이상 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#024</span>
+        <span class="badge type">후기</span>
+        <span class="keyword">앱 도입, 운영 편의</span>
+        
+      </div>
+      <div class="meta">행복한 미술교습소 · 친근한</div>
+      <div class="content"><p class="title">[학원 관리 앱] 올인원장 — 복잡한 행정을 앱 하나로 끝낸 후기</p><h4>이것저것 따로 관리하느라 바빴어요</h4><p>행복한 미술교습소 원장님은 예전에는 출결은 노트에, 원비는 엑셀에, 공지는 문자로 따로 관리하고 있었습니다. 각각 다른 방식으로 관리하다 보니 놓치는 부분도 생기고 시간도 많이 들었습니다. 어디에 무엇을 적어뒀는지 헷갈려 다시 찾아봐야 하는 날도 많았습니다.</p><h4>앱 하나로 정리된 운영</h4><p>올인원장을 도입한 뒤로는 출결, 원비, 공지까지 모든 관리가 하나의 앱 안에서 이루어집니다. 여러 도구를 오가며 확인하던 번거로움이 사라지고, 필요한 정보를 한 곳에서 바로 확인할 수 있게 됐습니다. 처음엔 새로운 앱 적응이 걱정됐지만, 화면 구성이 단순해 며칠 만에 익숙해졌다고 합니다.</p><h4>솔직한 원장님의 후기</h4><p>원장님은 &quot;복잡한 행정을 앱 하나로 끝냈다&quot;며 친근하게 후기를 전했습니다. 작은 교습소를 운영하는 원장님일수록 이런 통합 관리의 편리함을 크게 체감한다는 점을 보여주는 사례입니다. 여러 도구를 오가며 헷갈렸던 정보들이 한 곳에 모이면서, 이제는 헷갈릴 걱정 없이 편하게 운영하고 있다고 전했습니다. 주변 원장님들에게도 먼저 나서서 앱을 추천하고 있다고 웃으며 말했습니다.</p><p class="cta">복잡한 행정, 앱 하나로 정리해보세요. → [무료 체험 시작하기]</p></div>
+      <div class="annotation">본문 514자 — 500자 이상 기준 통과</div>
+    </div></section><section id="instagram" class="panel "><h2>인스타그램 (24건)</h2>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#001</span>
+        <span class="badge type">신기능</span>
+        <span class="keyword">원비 자동청구, 비대면결제</span>
+        
+      </div>
+      <div class="meta">수학의문 수학학원 · 전문적인</div>
+      <div class="content"><p class="caption">수학의문 수학학원 원장님, 원비 청구 아직 수기로 하시나요? 올인원장 원비 자동청구 + 비대면결제로 수납 업무를 자동화하세요.</p><div class="tags"><span class="tag">#올인원장</span><span class="tag">#학원관리</span><span class="tag">#원비자동청구</span><span class="tag">#비대면결제</span><span class="tag">#수납자동화</span></div></div>
+      <div class="annotation">본문 70자 — 150자 이내 기준 통과 / 해시태그 5개</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#002</span>
+        <span class="badge type">이벤트</span>
+        <span class="keyword">여름방학 특강, 선착순 30명</span>
+        
+      </div>
+      <div class="meta">에듀플러스 영어학원 · 긴급한</div>
+      <div class="content"><p class="caption">에듀플러스 영어학원 여름방학 특강 선착순 30명 마감 임박! 7월 10일까지만 할인 적용됩니다. 지금 바로 등록하세요.</p><div class="tags"><span class="tag">#올인원장</span><span class="tag">#학원관리</span><span class="tag">#여름방학특강</span><span class="tag">#선착순</span><span class="tag">#마감임박</span></div></div>
+      <div class="annotation">본문 66자 — 150자 이내 기준 통과 / 해시태그 5개</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#003</span>
+        <span class="badge type">후기</span>
+        <span class="keyword">출결 자동화, 시간절약</span>
+        
+      </div>
+      <div class="meta">참좋은 보습학원 · 따뜻한</div>
+      <div class="content"><p class="caption">10년차 원장님도 인정한 변화, 출결 자동화로 시간절약! 참좋은 보습학원의 진짜 후기를 만나보세요.</p><div class="tags"><span class="tag">#올인원장</span><span class="tag">#학원관리</span><span class="tag">#출결자동화</span><span class="tag">#시간절약</span><span class="tag">#학원운영후기</span></div></div>
+      <div class="annotation">본문 55자 — 150자 이내 기준 통과 / 해시태그 5개</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#004</span>
+        <span class="badge type">신기능</span>
+        <span class="keyword">AI 피드백, 학생별 분석</span>
+        
+      </div>
+      <div class="meta">더큰생각 논술학원 · 자랑스러운</div>
+      <div class="content"><p class="caption">더큰생각 논술학원, AI 피드백으로 학생별 맞춤 분석까지! 경쟁 학원엔 없는 차별화 포인트입니다.</p><div class="tags"><span class="tag">#올인원장</span><span class="tag">#학원관리</span><span class="tag">#AI피드백</span><span class="tag">#학생별분석</span><span class="tag">#논술학원</span></div></div>
+      <div class="annotation">본문 54자 — 150자 이내 기준 통과 / 해시태그 5개</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#005</span>
+        <span class="badge type">이벤트</span>
+        <span class="keyword">원장 추천 이벤트, 적립금 지급</span>
+        
+      </div>
+      <div class="meta">한울림 음악학원 · 밝은</div>
+      <div class="content"><p class="caption">한울림 음악학원처럼 동료 원장님 추천하고 양쪽 다 적립금 받으세요! 올인원장 추천 이벤트 진행 중.</p><div class="tags"><span class="tag">#올인원장</span><span class="tag">#학원관리</span><span class="tag">#원장추천이벤트</span><span class="tag">#적립금</span><span class="tag">#학원관리앱</span></div></div>
+      <div class="annotation">본문 55자 — 150자 이내 기준 통과 / 해시태그 5개</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#006</span>
+        <span class="badge type">후기</span>
+        <span class="keyword">학부모 만족, 출석 알림</span>
+        
+      </div>
+      <div class="meta">꿈이룸 미술학원 · 따뜻한</div>
+      <div class="content"><p class="caption">꿈이룸 미술학원 학부모님 후기: 출석 알림 덕분에 아이가 학원 잘 다니는지 안심된대요.</p><div class="tags"><span class="tag">#올인원장</span><span class="tag">#학원관리</span><span class="tag">#출석알림</span><span class="tag">#학부모만족</span><span class="tag">#학원후기</span></div></div>
+      <div class="annotation">본문 48자 — 150자 이내 기준 통과 / 해시태그 5개</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#007</span>
+        <span class="badge type">신기능</span>
+        <span class="keyword">출결 전광판, 수업 집중</span>
+        
+      </div>
+      <div class="meta">바른자세 태권도장 · 전문적인</div>
+      <div class="content"><p class="caption">바른자세 태권도장, 입구 전광판으로 출결 자동 표시! 수업 중 출석 체크 이제 필요 없어요.</p><div class="tags"><span class="tag">#올인원장</span><span class="tag">#학원관리</span><span class="tag">#출결전광판</span><span class="tag">#수업집중</span><span class="tag">#태권도장관리</span></div></div>
+      <div class="annotation">본문 51자 — 150자 이내 기준 통과 / 해시태그 5개</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#008</span>
+        <span class="badge type">이벤트</span>
+        <span class="keyword">30일 무료 체험, 신규 가입</span>
+        
+      </div>
+      <div class="meta">코딩나무 코딩학원 · 긴급한</div>
+      <div class="content"><p class="caption">코딩나무 코딩학원처럼 신규 가입하면 30일 전액 무료! 카드 등록 없이 바로 시작하세요.</p><div class="tags"><span class="tag">#올인원장</span><span class="tag">#학원관리</span><span class="tag">#30일무료체험</span><span class="tag">#신규가입</span><span class="tag">#학원관리앱</span></div></div>
+      <div class="annotation">본문 49자 — 150자 이내 기준 통과 / 해시태그 5개</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#009</span>
+        <span class="badge type">후기</span>
+        <span class="keyword">매출 증가, 원생 증가</span>
+        
+      </div>
+      <div class="meta">탑클래스 수학학원 · 자랑스러운</div>
+      <div class="content"><p class="caption">탑클래스 수학학원, 올인원장 도입 3개월 만에 매출 20% 상승! 숫자로 증명된 결과입니다.</p><div class="tags"><span class="tag">#올인원장</span><span class="tag">#학원관리</span><span class="tag">#매출증가</span><span class="tag">#원생증가</span><span class="tag">#학원운영후기</span></div></div>
+      <div class="annotation">본문 51자 — 150자 이내 기준 통과 / 해시태그 5개</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#010</span>
+        <span class="badge type">신기능</span>
+        <span class="keyword">상담 이력 관리, 학부모 상담</span>
+        
+      </div>
+      <div class="meta">마음쑥쑥 심리상담센터 · 전문적인</div>
+      <div class="content"><p class="caption">마음쑥쑥 심리상담센터, 상담 이력 자동 저장으로 놓치는 상담 없이 관리하세요.</p><div class="tags"><span class="tag">#올인원장</span><span class="tag">#학원관리</span><span class="tag">#상담이력관리</span><span class="tag">#학부모상담</span><span class="tag">#전문상담</span></div></div>
+      <div class="annotation">본문 43자 — 150자 이내 기준 통과 / 해시태그 5개</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#011</span>
+        <span class="badge type">이벤트</span>
+        <span class="keyword">신학기 이벤트, 첫 달 무료</span>
+        
+      </div>
+      <div class="meta">슬기로운 국어학원 · 밝은</div>
+      <div class="content"><p class="caption">슬기로운 국어학원 신학기 이벤트! 첫 달 원비 무료로 새 학기 시작하세요.</p><div class="tags"><span class="tag">#올인원장</span><span class="tag">#학원관리</span><span class="tag">#신학기이벤트</span><span class="tag">#첫달무료</span><span class="tag">#학원등록</span></div></div>
+      <div class="annotation">본문 41자 — 150자 이내 기준 통과 / 해시태그 5개</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#012</span>
+        <span class="badge type">후기</span>
+        <span class="keyword">강사 만족, 수업 준비</span>
+        <span class="note">(detail 결측 → type·keyword·brand_name 기반으로 생성)</span>
+      </div>
+      <div class="meta">영어마을 어학원 · 친근한</div>
+      <div class="content"><p class="caption">영어마을 어학원 강사님 후기: 수업 준비가 가벼워지니 수업에 더 집중하게 됐어요.</p><div class="tags"><span class="tag">#올인원장</span><span class="tag">#학원관리</span><span class="tag">#강사만족</span><span class="tag">#수업준비</span><span class="tag">#학원관리앱</span></div></div>
+      <div class="annotation">본문 45자 — 150자 이내 기준 통과 / 해시태그 5개</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#013</span>
+        <span class="badge type">신기능</span>
+        <span class="keyword">학부모 알림, 공지 자동발송</span>
+        
+      </div>
+      <div class="meta">해맑은 피아노학원 · 밝은</div>
+      <div class="content"><p class="caption">해맑은 피아노학원, 공지 한 번 쓰면 전체 학부모에게 카톡 자동 발송! 이제 걱정 끝.</p><div class="tags"><span class="tag">#올인원장</span><span class="tag">#학원관리</span><span class="tag">#학부모알림</span><span class="tag">#공지자동발송</span><span class="tag">#학원관리앱</span></div></div>
+      <div class="annotation">본문 48자 — 150자 이내 기준 통과 / 해시태그 5개</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#014</span>
+        <span class="badge type">이벤트</span>
+        <span class="keyword">여름 캠프, 조기등록 할인</span>
+        
+      </div>
+      <div class="meta">사이언스랩 과학학원 · 긴급한</div>
+      <div class="content"><p class="caption">사이언스랩 과학학원 여름 캠프, 조기등록 시 15% 할인! 정원 마감 임박했어요.</p><div class="tags"><span class="tag">#올인원장</span><span class="tag">#학원관리</span><span class="tag">#여름캠프</span><span class="tag">#조기등록할인</span><span class="tag">#마감임박</span></div></div>
+      <div class="annotation">본문 45자 — 150자 이내 기준 통과 / 해시태그 5개</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#015</span>
+        <span class="badge type">후기</span>
+        <span class="keyword">행정 자동화, 워라밸</span>
+        
+      </div>
+      <div class="meta">또박또박 글쓰기교실 · 따뜻한</div>
+      <div class="content"><p class="caption">또박또박 글쓰기교실 1인 원장님 후기: 행정 자동화로 저녁 시간을 되찾았어요.</p><div class="tags"><span class="tag">#올인원장</span><span class="tag">#학원관리</span><span class="tag">#행정자동화</span><span class="tag">#워라밸</span><span class="tag">#1인원장</span></div></div>
+      <div class="annotation">본문 43자 — 150자 이내 기준 통과 / 해시태그 5개</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#016</span>
+        <span class="badge type">신기능</span>
+        <span class="keyword">매출 분석 리포트, 전환율</span>
+        
+      </div>
+      <div class="meta">넘버원 수학전문학원 · 전문적인</div>
+      <div class="content"><p class="caption">넘버원 수학전문학원, 수납과 상담 전환율을 그래프로 자동 분석! 감이 아닌 데이터로.</p><div class="tags"><span class="tag">#올인원장</span><span class="tag">#학원관리</span><span class="tag">#매출분석리포트</span><span class="tag">#전환율</span><span class="tag">#학원관리앱</span></div></div>
+      <div class="annotation">본문 47자 — 150자 이내 기준 통과 / 해시태그 5개</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#017</span>
+        <span class="badge type">이벤트</span>
+        <span class="keyword">가을 특강, 한정 모집</span>
+        
+      </div>
+      <div class="meta">리딩킹 독서논술 · 긴급한</div>
+      <div class="content"><p class="caption">리딩킹 독서논술 가을 특강, 20명 한정 모집! 정원 마감 전에 서둘러 등록하세요.</p><div class="tags"><span class="tag">#올인원장</span><span class="tag">#학원관리</span><span class="tag">#가을특강</span><span class="tag">#한정모집</span><span class="tag">#마감임박</span></div></div>
+      <div class="annotation">본문 46자 — 150자 이내 기준 통과 / 해시태그 5개</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#018</span>
+        <span class="badge type">후기</span>
+        <span class="keyword">출결 알림, 학부모 신뢰</span>
+        
+      </div>
+      <div class="meta">푸른솔 보습학원 · 따뜻한</div>
+      <div class="content"><p class="caption">푸른솔 보습학원 원장님 후기: 출결 알림 덕분에 학부모 클레임이 사라졌어요.</p><div class="tags"><span class="tag">#올인원장</span><span class="tag">#학원관리</span><span class="tag">#출결알림</span><span class="tag">#학부모신뢰</span><span class="tag">#학원후기</span></div></div>
+      <div class="annotation">본문 42자 — 150자 이내 기준 통과 / 해시태그 5개</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#019</span>
+        <span class="badge type">신기능</span>
+        <span class="keyword">보강 관리, 스케줄 자동조정</span>
+        
+      </div>
+      <div class="meta">스텝업 영어학원 · 전문적인</div>
+      <div class="content"><p class="caption">스텝업 영어학원, 결석 학생 보강 일정을 자동으로 추천·조정! 조율 시간이 크게 줄어요.</p><div class="tags"><span class="tag">#올인원장</span><span class="tag">#학원관리</span><span class="tag">#보강관리</span><span class="tag">#스케줄자동조정</span><span class="tag">#학원관리앱</span></div></div>
+      <div class="annotation">본문 49자 — 150자 이내 기준 통과 / 해시태그 5개</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#020</span>
+        <span class="badge type">이벤트</span>
+        <span class="keyword">리뷰 작성 이벤트, 기프티콘</span>
+        <span class="note">(detail 결측 → type·keyword·brand_name 기반으로 생성)</span>
+      </div>
+      <div class="meta">똑똑한 토론학원 · 밝은</div>
+      <div class="content"><p class="caption">똑똑한 토론학원 학부모님, 리뷰 남기고 기프티콘 받으세요! 참여 방법도 간단해요.</p><div class="tags"><span class="tag">#올인원장</span><span class="tag">#학원관리</span><span class="tag">#리뷰작성이벤트</span><span class="tag">#기프티콘</span><span class="tag">#학원관리앱</span></div></div>
+      <div class="annotation">본문 45자 — 150자 이내 기준 통과 / 해시태그 5개</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#021</span>
+        <span class="badge type">후기</span>
+        <span class="keyword">수납 자동화, 미납 감소</span>
+        
+      </div>
+      <div class="meta">그랜드 수학학원 · 자랑스러운</div>
+      <div class="content"><p class="caption">그랜드 수학학원, 자동 청구 도입 후 원비 미납률이 절반으로 줄었어요!</p><div class="tags"><span class="tag">#올인원장</span><span class="tag">#학원관리</span><span class="tag">#수납자동화</span><span class="tag">#미납감소</span><span class="tag">#학원운영후기</span></div></div>
+      <div class="annotation">본문 39자 — 150자 이내 기준 통과 / 해시태그 5개</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#022</span>
+        <span class="badge type">신기능</span>
+        <span class="keyword">학습 패턴 분석, 맞춤 피드백</span>
+        
+      </div>
+      <div class="meta">브레인업 영재교육 · 자랑스러운</div>
+      <div class="content"><p class="caption">브레인업 영재교육, 출결·참여도로 학생별 학습 패턴 자동 분석! 맞춤 피드백까지.</p><div class="tags"><span class="tag">#올인원장</span><span class="tag">#학원관리</span><span class="tag">#학습패턴분석</span><span class="tag">#맞춤피드백</span><span class="tag">#영재교육</span></div></div>
+      <div class="annotation">본문 45자 — 150자 이내 기준 통과 / 해시태그 5개</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#023</span>
+        <span class="badge type">이벤트</span>
+        <span class="keyword">체험 수업, 무료 진단</span>
+        
+      </div>
+      <div class="meta">말문트임 스피치학원 · 밝은</div>
+      <div class="content"><p class="caption">말문트임 스피치학원, 무료 체험 수업 + 학습 진단까지! 등록 전에 먼저 경험해보세요.</p><div class="tags"><span class="tag">#올인원장</span><span class="tag">#학원관리</span><span class="tag">#체험수업</span><span class="tag">#무료진단</span><span class="tag">#스피치학원</span></div></div>
+      <div class="annotation">본문 48자 — 150자 이내 기준 통과 / 해시태그 5개</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#024</span>
+        <span class="badge type">후기</span>
+        <span class="keyword">앱 도입, 운영 편의</span>
+        
+      </div>
+      <div class="meta">행복한 미술교습소 · 친근한</div>
+      <div class="content"><p class="caption">행복한 미술교습소 원장님 후기: 복잡한 행정을 앱 하나로 끝냈어요!</p><div class="tags"><span class="tag">#올인원장</span><span class="tag">#학원관리</span><span class="tag">#앱도입</span><span class="tag">#운영편의</span><span class="tag">#미술교습소</span></div></div>
+      <div class="annotation">본문 37자 — 150자 이내 기준 통과 / 해시태그 5개</div>
+    </div></section><section id="kakao" class="panel "><h2>카카오채널 (24건)</h2>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#001</span>
+        <span class="badge type">신기능</span>
+        <span class="keyword">원비 자동청구, 비대면결제</span>
+        
+      </div>
+      <div class="meta">수학의문 수학학원 · 전문적인</div>
+      <div class="content"><p>📋 올인원장 원비 자동청구 출시</p><p>수학의문 수학학원처럼 수기 청구하셨나요? 비대면결제 + 미납 자동 알림으로 수납 업무를 끝내세요.</p><p>→ 지금 무료 체험하기</p></div>
+      <div class="annotation">83자 — 180자 이내 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#002</span>
+        <span class="badge type">이벤트</span>
+        <span class="keyword">여름방학 특강, 선착순 30명</span>
+        
+      </div>
+      <div class="meta">에듀플러스 영어학원 · 긴급한</div>
+      <div class="content"><p>⏰ 에듀플러스 영어학원 여름방학 특강</p><p>선착순 30명, 7월 10일 마감! 지금 등록하지 않으면 다음 학기까지 기다려야 합니다.</p><p>→ 바로 등록하기</p></div>
+      <div class="annotation">78자 — 180자 이내 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#003</span>
+        <span class="badge type">후기</span>
+        <span class="keyword">출결 자동화, 시간절약</span>
+        
+      </div>
+      <div class="meta">참좋은 보습학원 · 따뜻한</div>
+      <div class="content"><p>💛 참좋은 보습학원 10년 원장님 후기</p><p>출결 자동화 도입 후 행정업무가 절반으로 줄었대요. 저녁 시간을 되찾은 이야기, 지금 확인해보세요.</p><p>→ 후기 더 보기</p></div>
+      <div class="annotation">85자 — 180자 이내 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#004</span>
+        <span class="badge type">신기능</span>
+        <span class="keyword">AI 피드백, 학생별 분석</span>
+        
+      </div>
+      <div class="meta">더큰생각 논술학원 · 자랑스러운</div>
+      <div class="content"><p>🏆 더큰생각 논술학원만의 차별점</p><p>AI가 학생별 학습 피드백을 자동 생성해요. 경쟁사에 없는 기능, 지금 확인해보세요.</p><p>→ 지금 체험하기</p></div>
+      <div class="annotation">73자 — 180자 이내 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#005</span>
+        <span class="badge type">이벤트</span>
+        <span class="keyword">원장 추천 이벤트, 적립금 지급</span>
+        
+      </div>
+      <div class="meta">한울림 음악학원 · 밝은</div>
+      <div class="content"><p>🎵 한울림 음악학원과 함께하는 추천 이벤트</p><p>동료 원장님 추천하면 양쪽 모두 적립금 지급! 간단한 추천 코드 입력만 하면 돼요.</p><p>→ 추천하러 가기</p></div>
+      <div class="annotation">78자 — 180자 이내 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#006</span>
+        <span class="badge type">후기</span>
+        <span class="keyword">학부모 만족, 출석 알림</span>
+        
+      </div>
+      <div class="meta">꿈이룸 미술학원 · 따뜻한</div>
+      <div class="content"><p>💛 꿈이룸 미술학원 학부모 후기</p><p>출석 알림 받고 나서 아이 걱정이 훨씬 줄었대요. 우리 학원도 지금 시작해보세요.</p><p>→ 무료 체험하기</p></div>
+      <div class="annotation">71자 — 180자 이내 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#007</span>
+        <span class="badge type">신기능</span>
+        <span class="keyword">출결 전광판, 수업 집중</span>
+        
+      </div>
+      <div class="meta">바른자세 태권도장 · 전문적인</div>
+      <div class="content"><p>📋 바른자세 태권도장 신기능 안내</p><p>입구 전광판에 출석이 자동 표시돼요. 수업 중 출석 체크는 이제 그만!</p><p>→ 지금 확인하기</p></div>
+      <div class="annotation">66자 — 180자 이내 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#008</span>
+        <span class="badge type">이벤트</span>
+        <span class="keyword">30일 무료 체험, 신규 가입</span>
+        
+      </div>
+      <div class="meta">코딩나무 코딩학원 · 긴급한</div>
+      <div class="content"><p>🚨 신규 원장님 한정 이벤트</p><p>코딩나무 코딩학원처럼 지금 가입하면 30일 전액 무료! 카드 등록 없이 바로 시작 가능해요.</p><p>→ 지금 가입하기</p></div>
+      <div class="annotation">75자 — 180자 이내 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#009</span>
+        <span class="badge type">후기</span>
+        <span class="keyword">매출 증가, 원생 증가</span>
+        
+      </div>
+      <div class="meta">탑클래스 수학학원 · 자랑스러운</div>
+      <div class="content"><p>📈 탑클래스 수학학원 매출 20% 상승 후기</p><p>도입 3개월 만에 만든 변화, 지금 확인해보세요.</p><p>→ 후기 더 보기</p></div>
+      <div class="annotation">60자 — 180자 이내 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#010</span>
+        <span class="badge type">신기능</span>
+        <span class="keyword">상담 이력 관리, 학부모 상담</span>
+        
+      </div>
+      <div class="meta">마음쑥쑥 심리상담센터 · 전문적인</div>
+      <div class="content"><p>📋 마음쑥쑥 심리상담센터 신기능</p><p>상담 내용이 자동 저장돼 지난 상담을 잊어버릴 걱정 없어요.</p><p>→ 지금 확인하기</p></div>
+      <div class="annotation">59자 — 180자 이내 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#011</span>
+        <span class="badge type">이벤트</span>
+        <span class="keyword">신학기 이벤트, 첫 달 무료</span>
+        
+      </div>
+      <div class="meta">슬기로운 국어학원 · 밝은</div>
+      <div class="content"><p>🌸 슬기로운 국어학원 신학기 이벤트</p><p>첫 달 원비 무료로 새 학기 시작해요! 지금 등록 문의하세요.</p><p>→ 지금 문의하기</p></div>
+      <div class="annotation">62자 — 180자 이내 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#012</span>
+        <span class="badge type">후기</span>
+        <span class="keyword">강사 만족, 수업 준비</span>
+        <span class="note">(detail 결측 → type·keyword·brand_name 기반으로 생성)</span>
+      </div>
+      <div class="meta">영어마을 어학원 · 친근한</div>
+      <div class="content"><p>😊 영어마을 어학원 강사님 후기</p><p>수업 준비 시간이 줄어서 수업에 더 집중할 수 있대요.</p><p>→ 후기 더 보기</p></div>
+      <div class="annotation">56자 — 180자 이내 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#013</span>
+        <span class="badge type">신기능</span>
+        <span class="keyword">학부모 알림, 공지 자동발송</span>
+        
+      </div>
+      <div class="meta">해맑은 피아노학원 · 밝은</div>
+      <div class="content"><p>🔔 해맑은 피아노학원 신기능</p><p>공지 한 번 쓰면 전체 학부모에게 카톡으로 자동 발송돼요!</p><p>→ 지금 확인하기</p></div>
+      <div class="annotation">56자 — 180자 이내 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#014</span>
+        <span class="badge type">이벤트</span>
+        <span class="keyword">여름 캠프, 조기등록 할인</span>
+        
+      </div>
+      <div class="meta">사이언스랩 과학학원 · 긴급한</div>
+      <div class="content"><p>⏰ 사이언스랩 과학학원 여름 캠프</p><p>조기등록 15% 할인, 정원 마감 임박! 지금 등록해야 놓치지 않아요.</p><p>→ 지금 등록하기</p></div>
+      <div class="annotation">66자 — 180자 이내 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#015</span>
+        <span class="badge type">후기</span>
+        <span class="keyword">행정 자동화, 워라밸</span>
+        
+      </div>
+      <div class="meta">또박또박 글쓰기교실 · 따뜻한</div>
+      <div class="content"><p>💛 또박또박 글쓰기교실 원장님 후기</p><p>행정 자동화 덕분에 저녁 시간을 되찾았대요.</p><p>→ 후기 더 보기</p></div>
+      <div class="annotation">52자 — 180자 이내 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#016</span>
+        <span class="badge type">신기능</span>
+        <span class="keyword">매출 분석 리포트, 전환율</span>
+        
+      </div>
+      <div class="meta">넘버원 수학전문학원 · 전문적인</div>
+      <div class="content"><p>📊 넘버원 수학전문학원 신기능</p><p>수납 현황과 상담 전환율이 그래프로 자동 분석돼요.</p><p>→ 지금 확인하기</p></div>
+      <div class="annotation">53자 — 180자 이내 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#017</span>
+        <span class="badge type">이벤트</span>
+        <span class="keyword">가을 특강, 한정 모집</span>
+        
+      </div>
+      <div class="meta">리딩킹 독서논술 · 긴급한</div>
+      <div class="content"><p>⏰ 리딩킹 독서논술 가을 특강</p><p>20명 한정 모집, 마감 임박! 지금 등록해야 자리를 확보할 수 있어요.</p><p>→ 지금 등록하기</p></div>
+      <div class="annotation">65자 — 180자 이내 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#018</span>
+        <span class="badge type">후기</span>
+        <span class="keyword">출결 알림, 학부모 신뢰</span>
+        
+      </div>
+      <div class="meta">푸른솔 보습학원 · 따뜻한</div>
+      <div class="content"><p>💛 푸른솔 보습학원 원장님 후기</p><p>출결 알림 도입 후 학부모 클레임이 사라졌대요.</p><p>→ 후기 더 보기</p></div>
+      <div class="annotation">52자 — 180자 이내 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#019</span>
+        <span class="badge type">신기능</span>
+        <span class="keyword">보강 관리, 스케줄 자동조정</span>
+        
+      </div>
+      <div class="meta">스텝업 영어학원 · 전문적인</div>
+      <div class="content"><p>📋 스텝업 영어학원 신기능</p><p>결석 학생 보강 일정을 자동으로 추천·조정해드려요.</p><p>→ 지금 확인하기</p></div>
+      <div class="annotation">51자 — 180자 이내 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#020</span>
+        <span class="badge type">이벤트</span>
+        <span class="keyword">리뷰 작성 이벤트, 기프티콘</span>
+        <span class="note">(detail 결측 → type·keyword·brand_name 기반으로 생성)</span>
+      </div>
+      <div class="meta">똑똑한 토론학원 · 밝은</div>
+      <div class="content"><p>🎁 똑똑한 토론학원 리뷰 이벤트</p><p>리뷰 남기면 기프티콘 지급! 몇 분이면 참여 끝나요.</p><p>→ 리뷰 남기러 가기</p></div>
+      <div class="annotation">57자 — 180자 이내 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#021</span>
+        <span class="badge type">후기</span>
+        <span class="keyword">수납 자동화, 미납 감소</span>
+        
+      </div>
+      <div class="meta">그랜드 수학학원 · 자랑스러운</div>
+      <div class="content"><p>📈 그랜드 수학학원 수납 자동화 후기</p><p>미납률이 절반으로 줄었대요. 우리 학원도 확인해보세요.</p><p>→ 후기 더 보기</p></div>
+      <div class="annotation">59자 — 180자 이내 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#022</span>
+        <span class="badge type">신기능</span>
+        <span class="keyword">학습 패턴 분석, 맞춤 피드백</span>
+        
+      </div>
+      <div class="meta">브레인업 영재교육 · 자랑스러운</div>
+      <div class="content"><p>🏆 브레인업 영재교육 신기능</p><p>출결·참여도 데이터로 학생별 학습 패턴을 자동 분석해요.</p><p>→ 지금 확인하기</p></div>
+      <div class="annotation">55자 — 180자 이내 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#023</span>
+        <span class="badge type">이벤트</span>
+        <span class="keyword">체험 수업, 무료 진단</span>
+        
+      </div>
+      <div class="meta">말문트임 스피치학원 · 밝은</div>
+      <div class="content"><p>😊 말문트임 스피치학원 이벤트</p><p>무료 체험 수업 + 학습 진단까지 한 번에! 지금 신청하세요.</p><p>→ 체험 신청하기</p></div>
+      <div class="annotation">59자 — 180자 이내 기준 통과</div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge id">#024</span>
+        <span class="badge type">후기</span>
+        <span class="keyword">앱 도입, 운영 편의</span>
+        
+      </div>
+      <div class="meta">행복한 미술교습소 · 친근한</div>
+      <div class="content"><p>😊 행복한 미술교습소 원장님 후기</p><p>복잡한 행정을 앱 하나로 끝냈대요. 우리도 시작해볼까요?</p><p>→ 후기 더 보기</p></div>
+      <div class="annotation">58자 — 180자 이내 기준 통과</div>
+    </div></section>
+</div>
+<script>
+function show(id, btn) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
